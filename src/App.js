@@ -26,7 +26,7 @@ function App() {
             path="/change"
             element={<ChangePicture capturedImage={capturedImage} setCapturedImage={setCapturedImage} />}
           />
-          <Route path='/crop' element={ <CropPicture /> } />
+          <Route path='/crop' element={ <CropPicture capturedImage={capturedImage} setCapturedImage={setCapturedImage}/> }/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -6,3 +6,8 @@ passowrd check regex example js
 array sort js
 find missing value in array js
 how to make pattern x or o in js advance
+
+useContext example
+props advance example using react router
+crop photos in react
+react-image-crop example

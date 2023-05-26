@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import returnIcon from '../../assets/return.svg';
-import './index.css'
+import './index.css';
 
 const TakePicture = ({ setCapturedImage }) => {
   const navigate = useNavigate();
@@ -36,15 +36,16 @@ const TakePicture = ({ setCapturedImage }) => {
 
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     const imageData = canvas.toDataURL('image/png');
-    console.log(imageData)
     setCapturedImage(imageData);
-    navigate('/change');
+    navigate('/crop');
   };
 
   return (
     <section className='bg-white overflow-hidden'>
       <div className='navigation bg-primary d-flex align-items-center ps-3 gap-3'>
-        <img src={ returnIcon } alt='return' type='button'/>
+        <Link to='/'>
+          <img src={returnIcon} alt='return' type='button' />
+        </Link>
         <h4 className='judul m-0 text-white'>Profil</h4>
       </div>
 
@@ -60,7 +61,7 @@ const TakePicture = ({ setCapturedImage }) => {
 
       <canvas ref={canvasRef} className='d-none'></canvas>
     </section>
-  )
-}
+  );
+};
 
-export default TakePicture
+export default TakePicture;

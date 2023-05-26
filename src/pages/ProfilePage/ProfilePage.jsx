@@ -15,9 +15,9 @@ const ProfilePage = ({ capturedImage }) => {
       <div className='container my-3 h-100'>
         <div className='d-flex w-50 gap-3 align-items-center justify-items-center'>
           {/* <PhotoProfile /> */}
-          <div className='display-profile d-flex align-items-center justify-content-center' style={{ width: '56px', height: 'fit-content' }}>
+          <div className={ `display-profile d-flex align-items-center justify-content-center ${ capturedImage ? 'p-0' : 'p-2' }` } style={{ width: 'auto', height: 'auto' }}>
             <Link to="/change">
-              <img src={ capturedImage ? capturedImage : camera } width='56px' className='rounded-2' type="button"/>
+              <img src={ capturedImage ? capturedImage : camera } width={ capturedImage ? '56px' : '28px' } height={ capturedImage ? 'auto' : '28px' } className='rounded-2' type="button"/>
             </Link>
           </div>
           <div className='d-flex flex-column justify-items-center'>
