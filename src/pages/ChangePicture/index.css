@@ -1,0 +1,19 @@
+.navigation {
+    height: 56px;
+    width: 100%;
+}
+.btn-change-profile > button {
+    width: 341px;
+    height: 40px;
+    background: #006C84;
+    box-shadow: 4px 4px 8px rgba(0, 41, 132, 0.25);
+    border-radius: 8px;
+    color: white;
+    border: none;
+}
+.set-profile{
+    height: 65%;
+    background: #E0E0E0;
+    box-shadow: 4px 4px 8px rgba(0, 41, 132, 0.25);
+    border-radius: 8px;
+}
