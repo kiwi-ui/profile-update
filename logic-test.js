@@ -13,10 +13,9 @@ const bilanganCacah = (N) => {
             amount++
         }
     }
-    console.log(array)
     return array
 }
-bilanganCacah(10)
+console.log(bilanganCacah(10))
 
 // Nomor 2
 const cariHewan = (input) => {
@@ -33,34 +32,34 @@ const cariHewan = (input) => {
             output.push('sang gajah')
         }
     }
-    console.log(output)
     return output
 };
 
-cariHewan("Berikut adalah kisah sang gajah. Sang gajah memiliki teman serigala bernama DoeSang. Gajah sering dibela oleh serigala ketika harimau mendekati gajah.")
+console.log(cariHewan("Berikut adalah kisah sang gajah. Sang gajah memiliki teman serigala bernama DoeSang. Gajah sering dibela oleh serigala ketika harimau mendekati gajah."))
 
 //Nomor 3
 const checkPassword = (input) => {
     if(input.length < 8) {
         console.log('Kata sandi minimal 8 karakter')
+        return ('Kata sandi minimal 8 karakter')
     }
     else if(input.length > 32) {
-        console.log('Kata sandi maksimal 32 karakter')
+        return 'Kata sandi maksimal 32 karakter'
     }
     else if(/^\d/.test(input)) {
-        console.log('Karakter awal tidak boleh angka')
+        return 'Karakter awal tidak boleh angka'
     }
     else if(!/\d/.test(input)) {
-        console.log('Harus memiliki angka')
+        return 'Harus memiliki angka'
     }
     else if(!/[a-z]/.test(input) || !/[A-Z]/.test(input) ) {
-        console.log('Harus memiliki huruf kapital dan huruf kecil')
+        return 'Harus memiliki huruf kapital dan huruf kecil'
     }
-    else console.log('password valid')
+    else return('password valid')
 
 }
 
-checkPassword('gg4araaaaAaa')
+console.log(checkPassword('gg4araaaaAaa'))
 
 // Nomor 4
 const missingNumber = (array) => {

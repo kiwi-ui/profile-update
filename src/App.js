@@ -16,12 +16,11 @@ function App() {
           <Route
             exact
             path="/"
-            element={<ProfilePage capturedImage={capturedImage} />} // Kirimkan gambar yang diambil ke halaman ProfilePage
+            element={<ProfilePage capturedImage={capturedImage} />}
           />
           <Route
             path="/take"
-            element={<TakePicture setCapturedImage={setCapturedImage} />} // Kirimkan prop setCapturedImage ke halaman TakePicture
-          />
+            element={<TakePicture setCapturedImage={setCapturedImage} />} />
           <Route
             path="/change"
             element={<ChangePicture capturedImage={capturedImage} setCapturedImage={setCapturedImage} />}
