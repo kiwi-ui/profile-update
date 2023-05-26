@@ -3,14 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import returnIcon from '../../assets/return.svg';
 import './index.css'
 
-const TakePicture = () => {
+const TakePicture = ({ setCapturedImage }) => {
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [stream, setStream] = useState(null);
 
   useEffect(() => {
-    // Minta izin pengguna untuk mengakses kamera
     navigator.mediaDevices.getUserMedia({ video: true })
       .then((mediaStream) => {
         videoRef.current.srcObject = mediaStream;
@@ -21,7 +20,6 @@ const TakePicture = () => {
       });
 
     return () => {
-      // Hentikan stream video saat komponen unmount
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
       }
@@ -33,18 +31,13 @@ const TakePicture = () => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
 
-    // Atur ukuran canvas sesuai dengan video
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
 
-    // Gambar frame video pada canvas
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-    // Dapatkan data gambar dari canvas sebagai URL base64
     const imageData = canvas.toDataURL('image/png');
-    // Simpan imageData ke state atau kirim ke server
-    
-    // Navigasikan kembali ke halaman ChangePicture setelah mengambil gambar
+    console.log(imageData)
+    setCapturedImage(imageData);
     navigate('/change');
   };
 
@@ -65,7 +58,6 @@ const TakePicture = () => {
         </div>
       </div>
 
-      {/* Tambahkan elemen canvas untuk menampilkan gambar yang diambil */}
       <canvas ref={canvasRef} className='d-none'></canvas>
     </section>
   )

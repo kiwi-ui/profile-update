@@ -2,10 +2,9 @@ import React from 'react'
 import camera from '../../assets/camera.svg';
 import returnIcon from '../../assets/return.svg';
 import './index.css';
-import PhotoProfile from '../../components/PhotoProfile';
 import { Link } from 'react-router-dom';
 
-const ProfilePage = () => {
+const ProfilePage = ({ capturedImage }) => {
   return (
     <section className='bg-white overflow-hidden'>
       <div className='navigation bg-primary d-flex align-items-center ps-3 gap-3'>
@@ -16,9 +15,9 @@ const ProfilePage = () => {
       <div className='container my-3 h-100'>
         <div className='d-flex w-50 gap-3 align-items-center justify-items-center'>
           {/* <PhotoProfile /> */}
-          <div className='display-profile d-flex align-items-center justify-content-center' style={{ width: '56px', height: '56px' }}>
+          <div className='display-profile d-flex align-items-center justify-content-center' style={{ width: '56px', height: 'fit-content' }}>
             <Link to="/change">
-              <img src={ camera } type="button"/>
+              <img src={ capturedImage ? capturedImage : camera } width='56px' className='rounded-2' type="button"/>
             </Link>
           </div>
           <div className='d-flex flex-column justify-items-center'>
